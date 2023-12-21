@@ -29,7 +29,7 @@ const NewArrival2 = () => {
             {newArrival.slice(0, 3).map((product, i) => (
                 <article className="row align-items-center hover-up" key={i}>
                     <figure className="col-md-4 mb-0">
-                        <Link href="/details/[slug]" as={`/details/${product.slug}`}
+                        <Link  href={`/details/${product.slug}`}
                           >
                             <a>
                                 <img 
@@ -41,7 +41,7 @@ const NewArrival2 = () => {
                     </figure>
                     <div className="col-md-8 mb-0">
                         <h6>
-                            <Link href="/details/[slug]" as={`/details/${product.slug}`}
+                            <Link  href={`/details/${product.slug}`}
                             >
                                 <a>{product.title}</a>
                             </Link>

@@ -27,8 +27,7 @@ const TrendingSlider = () => {
             {trending.slice(0, 3).map((product, i) => (
                     <article className="row align-items-center hover-up" key={i}>
                     <figure className="col-md-4 mb-0">
-                        <Link href="/details/[slug]"
-                            as={`/details/${product.slug}`}><a>
+                        <Link href={`/details/${product.slug}`}><a>
                             <img src={handleFilterImage(product)} 
                             style={{width: '100%',height: '100px'}}
                             alt="" />
@@ -37,8 +36,7 @@ const TrendingSlider = () => {
                     </figure>
                     <div className="col-md-8 mb-0">
                         <h6>
-                            <Link href="/details/[slug]"
-                                as={`/details/${product.slug}`}><a>{product.title}</a></Link>
+                            <Link href={`/details/${product.slug}`}><a>{product.title}</a></Link>
                         </h6>
                         <div className="product-rate-cover">
                             <div className="product-rate d-inline-block">

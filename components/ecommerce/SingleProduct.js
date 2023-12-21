@@ -112,8 +112,7 @@ const SingleProduct = ({
                     </div>
                     <h2>
                         <Link
-                            href="/products/[slug]"
-                            as={`/products/${product.slug}`}
+                             href={`/details/${product.slug}`}
                         >
                             <a>{product.title}</a>
                         </Link>
