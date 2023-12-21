@@ -243,7 +243,7 @@ const ProductDetails = ({
 
                                 {quickView ? null : (
                                     <>
-                                        {/* <ProductTab product={product} variant={variantData} /> */}
+                                        <ProductTab product={product} variant={variantData} /> 
                                         <div className="row mt-60">
                                             <div className="col-12">
                                                 <h3 className="section-title style-1 mb-30">Related products</h3>
