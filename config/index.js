@@ -1,8 +1,8 @@
 const dev = process.env.NODE_ENV !== "production";
 
-export const server = "https://vrcwebsolutions.com"
+export const server = "https://vrcwebsolutions.com/ecom-admin/admin"
 
-export const imagePath = "https://vrcwebsolutions.com/admin/common/"
+export const imagePath = "https://vrcwebsolutions.com/ecom-admin/admin/common/"
 
 export const handleFilterImage = (product) => {
     const image = product.img.filter(img => {
