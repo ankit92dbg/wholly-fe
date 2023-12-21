@@ -70,8 +70,8 @@ const ProductTab = ({product,variant}) => {
 
     const fetchProductByCategorySlug = async () => {
         // With Category
-        const slug = Router.query.slug ? Router.query.slug : productData.slug
-        const request = await fetch(`${server}?action=product_by_slug&slug=${slug}`);
+        const slug = Router.query.index ? Router.query.index : productData.slug
+        const request = await fetch(`${server}/api/index.php?action=product_by_slug&slug=${slug}`);
         const allProducts = await request.json();
         setProductData(allProducts);
     };
