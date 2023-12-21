@@ -36,7 +36,7 @@ function Login() {
     bodyFormData.append("password", password);
     bodyFormData.append("action", "user_login");
     const response = await fetch(
-      server,
+      server+"/api/index.php",
       {
         method: "POST",
         body: bodyFormData,
