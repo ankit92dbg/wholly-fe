@@ -174,7 +174,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                     <br />
                                 </div>
 
-                                <div className="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
+                                {/* <div className="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
                                 <h5 className="section-title style-1 mb-30">New products</h5>
                                     <div className="single-post clearfix">
                                         <div className="image">
@@ -260,7 +260,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             Juice
                                         </h4>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
