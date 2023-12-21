@@ -1,6 +1,6 @@
 const dev = process.env.NODE_ENV !== "production";
 
-export const server = "https://vrcwebsolutions.com/admin/api/index.php"
+export const server = "https://vrcwebsolutions.com"
 
 export const imagePath = "https://vrcwebsolutions.com/admin/common/"
 
