@@ -10625,8 +10625,8 @@ footer .hotline img {
   }
   .logo.logo-width-1 {
     margin-right: 0;
-    position: absolute;
-    left: 50%;
+    position: relative;
+    left: 20%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -11721,13 +11721,13 @@ footer .hotline img {
 }
 
 .pdImage{
-  height: 500px;
-  width: 594px;
+  height: auto;
+  width: auto;
 }
 
 .pdImageThumb{
-  height: 95px;
-  width: 200px;
+  height: auto;
+  width: auto;
 }
 
 .shoppingLink{

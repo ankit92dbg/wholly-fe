@@ -606,13 +606,13 @@ useEffect(() => {
                 </p>
               </div>
 
-              <div className="header-action-icon-2 d-block d-lg-none">
+              {/* <div className="header-action-icon-2 d-block d-lg-none">
                 <div className="burger-icon burger-icon-white">
                   <span className="burger-icon-top"></span>
                   <span className="burger-icon-mid"></span>
                   <span className="burger-icon-bottom"></span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="header-action-right d-block d-lg-none">
                 <div className="header-action-2">
