@@ -123,7 +123,7 @@ useEffect(() => {
                           <i className="fi-rs-angle-small-down"></i>
                         </a>
                       </Link>
-                      <ul className="language-dropdown">
+                      {/* <ul className="language-dropdown">
                         <li>
                           <Link href="/#">
                             <a>
@@ -157,13 +157,13 @@ useEffect(() => {
                             </a>
                           </Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li>
                       <a className="language-dropdown-active" href="#">
-                        USD <i className="fi-rs-angle-small-down"></i>
+                        INR <i className="fi-rs-angle-small-down"></i>
                       </a>
-                      <ul className="language-dropdown">
+                      {/* <ul className="language-dropdown">
                         <li>
                           <a href="#">
                             <img src="/assets/imgs/theme/flag-fr.png" alt="" />
@@ -182,7 +182,7 @@ useEffect(() => {
                             EU
                           </a>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                   </ul>
                 </div>
