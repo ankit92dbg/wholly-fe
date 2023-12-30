@@ -57,7 +57,7 @@ const Cart = ({
     }
     bodyFormData.append('city', userDetails.city);
     bodyFormData.append('action', 'shipping_charge');
-    fetch(`${server}`, {
+    fetch(`${server}/api/index.php`, {
       method: "POST",
       body: bodyFormData,
     }).then((response) => response.json()).then((resp)=> {
@@ -126,7 +126,7 @@ const Cart = ({
               bodyFormData.append('total', price()+(totalShippingAmount*shippingCharge));
               bodyFormData.append('action', 'order_insert');
               bodyFormData.append('transaction_id', response.razorpay_payment_id);
-              fetch(`${server}`, {
+              fetch(`${server}/api/index.php`, {
                 method: "POST",
                 body: bodyFormData,
               }).then((t) => clearCart()).then(()=> router.push('/'));
