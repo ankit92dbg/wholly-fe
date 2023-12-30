@@ -5,6 +5,8 @@ import CategoryProduct2 from "../ecommerce/Filter/CategoryProduct2";
 import CategoryProduct3 from "../ecommerce/Filter/CategoryProduct3";
 import Search from "../ecommerce/Search";
 import { server } from "../../config/index";
+import { useRouter } from "next/router";
+
 
 const Header = ({
   totalCartItems,
@@ -16,6 +18,7 @@ const Header = ({
   const [scroll, setScroll] = useState(0);
   const [userDetails, setUserDetails] = useState({});
   const [category, setCategory] = useState([]);
+  const router = useRouter();
 
 
   useEffect(() => {
