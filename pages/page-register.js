@@ -10,6 +10,8 @@ import { server } from "../config/index";
 function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -32,24 +34,40 @@ function Login() {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
+  const handlePhone = (e) => {
+    setPhone(e.target.value);
+  };
   const register = async () => {
     if(name===""){
         toast("Please enter your name.");
         return
     }
+    if(phone===""){
+      toast("Please enter your phone no.");
+      return
+  }
     if(email===""){
         toast("Please enter your email.");
         return
     }
-    if(password===""){
-        toast("Please enter your password.");
+    if(username===""){
+        toast("Please enter your username.");
         return
     }
+    if(password===""){
+      toast("Please enter your password.");
+      return
+  }
     setLoading(true);
     let bodyFormData = new FormData();
     bodyFormData.append("name", name);
     bodyFormData.append("email", email);
     bodyFormData.append("password", password);
+    bodyFormData.append("username", username);
+    bodyFormData.append("phone", phone);
     bodyFormData.append("action", "user_register");
     const response = await fetch(
       server+"/api/index.php",
@@ -115,14 +133,38 @@ function Login() {
                             </div>
                             <div className="form-group">
                               <input
-                                type="text"
+                                type="number"
+                                required=""
+                                value={phone}
+                                onChange={(e) => {
+                                  handlePhone(e);
+                                }}
+                                name="phone"
+                                placeholder="Phone No. *"
+                              />
+                            </div>
+                            <div className="form-group">
+                              <input
+                                type="email"
                                 required=""
                                 value={email}
                                 onChange={(e) => {
                                   handleEmail(e);
                                 }}
                                 name="email"
-                                placeholder="Username or Email *"
+                                placeholder="Email *"
+                              />
+                            </div>
+                            <div className="form-group">
+                              <input
+                                type="text"
+                                required=""
+                                value={username}
+                                onChange={(e) => {
+                                  handleUsername(e);
+                                }}
+                                name="username"
+                                placeholder="Username *"
                               />
                             </div>
                             <div className="form-group">

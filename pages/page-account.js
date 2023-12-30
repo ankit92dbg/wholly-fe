@@ -19,6 +19,8 @@ function Account() {
     const [userState, setUserState] = useState("");
     const [pincode, setPincode] = useState("");
     const [mobileNo, setMobileNo] = useState("");
+    const [businessName, setBusinessName] = useState("");
+    const [gst, setGst] = useState("");
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -102,6 +104,8 @@ function Account() {
         bodyFormData.append("state", userState);
         bodyFormData.append("pincode", pincode);
         bodyFormData.append("mobileNo", mobileNo);
+        bodyFormData.append("businessName", businessName);
+        bodyFormData.append("gst", gst);
         bodyFormData.append("action", "save_address");
         const response = await fetch(
           server+"/api/index.php",
@@ -376,6 +380,32 @@ function Account() {
                                                                         />
                                                                     </div>
                                                                     <div className="form-group">
+                                                                           <input
+                                                                            type="text"
+                                                                            required=""
+                                                                            name="business_name"
+                                                                            autoComplete="off"
+                                                                            value={businessName}
+                                                                            onChange={(e) => {
+                                                                                setBusinessName(e.target.value);
+                                                                            }}
+                                                                            placeholder="Business Name"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="form-group">
+                                                                           <input
+                                                                            type="text"
+                                                                            required=""
+                                                                            name="gst"
+                                                                            autoComplete="off"
+                                                                            value={gst}
+                                                                            onChange={(e) => {
+                                                                                setGst(e.target.value);
+                                                                            }}
+                                                                            placeholder="GST"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="form-group">
                                                                         <button
                                                                             type="button"
                                                                             onClick={saveAddress}
@@ -402,6 +432,8 @@ function Account() {
                                                                     {userDetails.fullAdress}, <br /> {userDetails.pincode}, {userDetails.city} <br />Phone:  {userDetails.mobileNo}
                                                                 </address>
                                                                 <p> {userDetails.state}</p>
+                                                                <p> {userDetails.businessName ? 'Business Name : '+userDetails.businessName : ''}</p>
+                                                                <p> {userDetails.gst ? 'GST : '+userDetails.gst : ''}</p>
                                                                </>
                                                                 ) : (
                                                                     <p>Address is not available, please update your address.</p>
