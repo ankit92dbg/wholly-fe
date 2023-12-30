@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import { toast } from "react-toastify";
 import Preloader from "./../components/elements/Preloader";
@@ -14,6 +14,14 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter()
+
+  useEffect(()=>{
+    if (
+      localStorage.getItem('userDetails')!==null
+      ) {
+        router.push('/')
+      }
+  },[])
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -44,7 +52,7 @@ function Login() {
     bodyFormData.append("password", password);
     bodyFormData.append("action", "user_register");
     const response = await fetch(
-      server,
+      server+"/api/index.php",
       {
         method: "POST",
         body: bodyFormData,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
@@ -12,6 +12,14 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  useEffect(()=>{
+    if (
+        localStorage.getItem('userDetails')!==null
+      ) {
+        router.push('/')
+      }
+  },[])
 
   const handleEmail = (e) => {
     setEmail(e.target.value);

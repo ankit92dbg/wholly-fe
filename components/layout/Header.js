@@ -50,6 +50,7 @@ useEffect(() => {
   const signOut = ()=>{
     localStorage.removeItem('userDetails')
     setUserDetails({})
+    router.push('/')
   }
 
   return (

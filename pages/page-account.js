@@ -4,9 +4,11 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Preloader from "./../components/elements/Preloader";
 import { server } from "../config/index";
+import { useRouter } from "next/router";
+
 
 function Account() {
-
+    const router = useRouter();
     const [activeIndex, setActiveIndex] = useState(1);
     const [orderData, setOrderData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -37,7 +39,7 @@ function Account() {
                 bodyFormData.append("user_id", JSON.parse(localStorage.getItem('userDetails')).user_id);
                 bodyFormData.append("action", "order_list");
                 const response = fetch(
-                    server,
+                    server+"/api/index.php",
                     {
                         method: "POST",
                         body: bodyFormData,
@@ -56,7 +58,14 @@ function Account() {
     };
 
     useEffect(()=>{
+        if (
+            localStorage.getItem('userDetails') &&
+            localStorage.getItem('userDetails') !== undefined
+          ) {
         setUserDetails(JSON.parse(localStorage.getItem('userDetails')));
+          }else{
+            router.push('/')
+          }
     },[])
 
     const saveAddress = async () => {
@@ -95,7 +104,7 @@ function Account() {
         bodyFormData.append("mobileNo", mobileNo);
         bodyFormData.append("action", "save_address");
         const response = await fetch(
-          server,
+          server+"/api/index.php",
           {
             method: "POST",
             body: bodyFormData,
@@ -143,7 +152,7 @@ function Account() {
         bodyFormData.append("npassword", npassword);
         bodyFormData.append("action", "save_account_details");
         const response = await fetch(
-          server,
+          server+"/api/index.php",
           {
             method: "POST",
             body: bodyFormData,
