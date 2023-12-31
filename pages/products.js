@@ -20,8 +20,16 @@ const Products = ({ products, productFilters, fetchProduct }) => {
         searchTerm = Router.query.search,
         showLimit = 12,
         showPagination = 4;
-        productFilters.cat_slug = Router.query.cat
-    const titlex = Router.query.cat
+        if(Router.query.cat!==undefined){
+            productFilters.cat_slug = Router.query.cat
+            productFilters.subcat_slug = ""
+        }
+        if(Router.query.subCat!==undefined){
+            productFilters.cat_slug = ""
+            productFilters.subcat_slug = Router.query.subCat
+        }
+        console.log('productFilters--->',productFilters)
+    let titlex = Router.query.cat
 
 
     let [pagination, setPagination] = useState([]);

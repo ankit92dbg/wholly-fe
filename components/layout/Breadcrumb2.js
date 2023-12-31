@@ -6,7 +6,7 @@ import Tags from "../ecommerce/Filter/Tags";
 const Breadcrumb2 = ({parent, sub, subChild, noBreadcrumb}) => {
     const router = useRouter()
 
-    const titlex = router.query.cat
+    const titlex = router.query.cat ? router.query.cat : router.query.subCat ? router.query.subCat : "All Products"
     return (
         <>
             <div className="page-header mt-30 mb-50">

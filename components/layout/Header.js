@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CategoryProduct2 from "../ecommerce/Filter/CategoryProduct2";
 import CategoryProduct3 from "../ecommerce/Filter/CategoryProduct3";
+import CategoryProduct4 from "../ecommerce/Filter/CategoryProduct4";
 import Search from "../ecommerce/Search";
 import { server } from "../../config/index";
 import { useRouter } from "next/router";
@@ -406,7 +407,7 @@ useEffect(() => {
                     }
                   >
                     <div className="d-flex categori-dropdown-inner">
-                      <CategoryProduct2 catData={category} />
+                      <CategoryProduct4 catData={category} />
                       {/* <CategoryProduct3 catData = {category} /> */}
                     </div>
                     {/* <div

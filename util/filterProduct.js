@@ -23,6 +23,7 @@ export default (productList, filters) => {
                     }
                 }
             } else {
+                console.log('key--->',key)
                 filteredList = filterByKey(filteredList, filters[key], key);
             }
         } else if (key == "vendor") {
