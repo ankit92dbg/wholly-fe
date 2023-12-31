@@ -67,7 +67,9 @@ const Cart = ({
         setBtnAction(false)
       }else{
         setBtnAction(true)
-        toast(`Shipping for ${userDetails.city} is not available.`);
+        if(userDetails.city!==undefined){
+          toast(`Shipping for ${userDetails.city} is not available.`);
+        }
       }
     });
   }

@@ -429,9 +429,9 @@ function Account() {
                                                                <>
                                                                 <address>
                                                                     {userDetails.flatNo}<br />
-                                                                    {userDetails.fullAdress}, <br /> {userDetails.pincode}, {userDetails.city} <br />Phone:  {userDetails.mobileNo}
+                                                                    {userDetails.fullAdress}, <br /> PIN Code : {userDetails.pincode}, <br/>City : {userDetails.city} <br />Phone:  {userDetails.mobileNo}
                                                                 </address>
-                                                                <p> {userDetails.state}</p>
+                                                                <p> State : {userDetails.state}</p>
                                                                 <p> {userDetails.businessName ? 'Business Name : '+userDetails.businessName : ''}</p>
                                                                 <p> {userDetails.gst ? 'GST : '+userDetails.gst : ''}</p>
                                                                </>
