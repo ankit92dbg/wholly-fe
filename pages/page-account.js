@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import Preloader from "./../components/elements/Preloader";
 import { server } from "../config/index";
 import { useRouter } from "next/router";
+import { imagePath } from "../config/index";
 
 
 function Account() {
@@ -233,7 +234,7 @@ function Account() {
                                                     </div>
                                                     {orderData.length > 0 ? (
                                                         <div className="card-body">
-                                                            <div className="table-responsive">
+                                                            {/* <div className="table-responsive" style={{background:'#f0f0f0'}}>
                                                                 <table className="table">
                                                                     <thead>
                                                                         <tr>
@@ -241,7 +242,6 @@ function Account() {
                                                                             <th>Date</th>
                                                                             <th>Status</th>
                                                                             <th>Total</th>
-                                                                            {/* <th>Actions</th> */}
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
@@ -251,12 +251,55 @@ function Account() {
                                                                                 <td>{item.created_at}</td>
                                                                                 <td>{item.order_status}</td>
                                                                                 <td>INR {item.total}</td>
-                                                                                {/* <td><a href="#" className="btn-small d-block">View</a></td> */}
                                                                             </tr>
                                                                         ))}
                                                                     </tbody>
                                                                 </table>
-                                                            </div>
+                                                            </div> */}
+                                                            {orderData.map((item, i) => (
+                                                                <div className="box" style={{
+                                                                    boxShadow: '0px 4px 8px 0px rgba(0,0,0,0.2)',
+                                                                    transition: '0.3s',
+                                                                    width: '100%',
+                                                                    borderRadius: '5px',
+                                                                    padding:'2%',
+                                                                    marginTop:'2%'
+                                                                }}>
+                                                                    <div className="row" style={{
+                                                                            borderBottom: '1px solid #dede',
+                                                                            paddingBottom: '2%',
+                                                                    }}>
+                                                                        <div className="col-md-8">
+                                                                            <p><strong>OrderID :</strong> #{item.id}</p>
+                                                                            <p><strong>Order Date :</strong> {item.created_at}</p>
+                                                                        </div>
+                                                                        <div className="col-md-4">
+                                                                            <p><strong>Order Total :</strong> INR {item.total}</p>
+                                                                            <p><strong>Order Status :</strong> {item.order_status}</p>
+                                                                        </div>
+                                                                    </div>    
+                                                                    {JSON.parse(item.product_info).map((item2, i) => (
+                                                                        <div className="row" style={{marginTop:'2%'}}>
+                                                                            <div className="col-md-2">
+                                                                                <img src={imagePath+item2.img[0].path} style={{width:'70px',height:'70px'}} />
+                                                                            </div>
+                                                                            <div className="col-md-8">
+                                                                                <p>{item2.title}</p>
+                                                                                <p style={{display:'flex'}}>Color : <span style={{
+                                                                                width: '25px',
+                                                                                height: '25px', 
+                                                                                display:'inherit',
+                                                                                background: item2.selectedVariant.variant_color,
+                                                                                marginLeft:'2%'
+                                                                                }}></span></p>
+                                                                            </div>
+                                                                            <div className="col-md-2">
+                                                                                <p>INR {item2.selectedVariant.variant_sale_price}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>
+                                                            ))}
                                                         </div>
                                                     ) : (
                                                         <div className="card-body">
