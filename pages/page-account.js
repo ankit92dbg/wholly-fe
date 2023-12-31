@@ -270,7 +270,7 @@ function Account() {
                                                                             paddingBottom: '2%',
                                                                     }}>
                                                                         <div className="col-md-8">
-                                                                            <p><strong>OrderID :</strong> #{item.id}</p>
+                                                                            <p><strong>OrderID :</strong> #{item.order_id}</p>
                                                                             <p><strong>Order Date :</strong> {item.created_at}</p>
                                                                         </div>
                                                                         <div className="col-md-4">
