@@ -39,6 +39,7 @@ const ProductDetails = ({
             setVariantData(allProducts.variants[0]);
         }
         setProductData(allProducts);
+        console.log(allProducts);
     };
 
 
@@ -95,18 +96,27 @@ const ProductDetails = ({
                                             {Object.keys(productData).length>0 && productData.variants.length > 0 && (
                                                 <span className="stock-status out-stock"> Sale Off {variantData.discount}%</span>
                                             )}
+                                            <p className="cat-link-here"><a href="">Slug Here</a></p>
                                             <h2 className="title-detail">{productData.title}</h2>
+                                            <p className="item-number">Item #: 15319336</p>
                                             <div className="product-detail-rating">
                                                 <div className="product-rate-cover text-end">
                                                     <div className="product-rate d-inline-block">
                                                         <div className="product-rating" style={{ width: `${Object.keys(productData).length > 0 ? productData.review.aggregateReview.rating_percent : 0}%` }}></div>
                                                     </div>
-                                                    <span className="font-small ml-5 text-muted"> ({Object.keys(productData).length > 0 ? productData.review.aggregateReview.total_review : 0} review/s)</span>
+                                                    <span className="font-small ml-5 text-muted"> ({Object.keys(productData).length > 0 ? productData.review.aggregateReview.total_review : 0} review/s)</span><span className="total_review">4.3 rating
+</span>
+<a href=""><span className="review-write"> Write a review <img
+                                            src="../../assets/imgs/theme/pen.png"
+                                            alt=""
+                                            className="pen-review"
+                                        /></span></a>
                                                 </div>
                                             </div>
                                             <div className="clearfix product-price-cover">
                                                 <div className="product-price primary-color float-left">
-                                                    <span className="current-price  text-brand">Rs. {(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.variant_sale_price : "" }</span>
+                                                    <span className="current-price  text-brand">INR {(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.variant_sale_price : "" }</span>
+                                                    <span  className="current-price  text-brand older-price"><del>INR  16000</del></span>
                                                     <span>
                                                         <span className="save-price font-md color3 ml-15">{(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.discount : "" }% Off</span>
                                                         <span className="old-price font-md ml-15">{productData.oldPrice ? `Rs. ${productData.oldPrice}` : null}</span>
@@ -121,7 +131,21 @@ const ProductDetails = ({
                                                       }}></div>
                                                 )}
                                             </div>
-                                            <div className="attr-detail attr-color mb-15">
+                                            <div class="row align-items-center">
+        <div class="col-6">
+            <div class="availability">
+                <label class="gray-text">Availability : </label>
+                                <span id="availability-status" class="in-stock dark-text exp_stock_text">In stock<i class="fa fa-check"></i></span>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="product-store">
+                <img alt="ubuy" src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/countries-flag/us-store.svg" class="mr-1" />
+                <span>Imported from USA store</span>
+            </div>
+        </div>
+    </div>
+                                            {/* <div className="attr-detail attr-color mb-15">
                                                 <strong className="mr-10">Color</strong>
                                                 <ul className="list-filter color-filter">
                                                     {Object.keys(productData).length>0 && productData.variants.map((clr, i) => (
@@ -132,9 +156,9 @@ const ProductDetails = ({
                                                         </li>
                                                     ))}
                                                 </ul>
-                                            </div>
+                                            </div> */}
                                             <div className="attr-detail attr-size" style={{display:'block'}}>
-                                               <div className="row">
+                                               {/* <div className="row">
                                                     <div className="col-md-3">
                                                         <p><strong className="mr-10">Dimension</strong> : </p>
                                                     </div>
@@ -144,7 +168,7 @@ const ProductDetails = ({
                                                         <p>{(Object.keys(productData).length>0 && productData.variants.length > 0) ?  "Height - "+variantData.variant_height+"mm" : "" }</p>
                                                         <p>{(Object.keys(productData).length>0 && productData.variants.length > 0) ?  "Weight - "+variantData.variant_weight+"gm" : "" }</p>
                                                     </div> 
-                                                </div>   
+                                                </div>    */}
                                                 {/* <ul className="list-filter size-filter font-small">
                                                     <li className="active">
                                                         <a>M</a>
@@ -199,7 +223,9 @@ const ProductDetails = ({
                                                         >
                                                             Add to cart
                                                         </button>
+                                                        
                                                     )}
+                                                    <button class="button button-add-to-cart margin-left-buy">Buy Now</button>
                                                      {variantData.stock_status=="on_back_order" && (
                                                         <button
                                                             onClick={(e) =>

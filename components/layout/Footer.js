@@ -187,217 +187,442 @@ const Footer = () => {
                     </div>
                 </section>
                 <section className="section-padding footer-mid">
-                    <div className="container pt-15 pb-20">
-                        <div className="row">
-                            <div className="col">
-                                <div
-                                    className="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0  wow animate__animated animate__fadeInUp"
-                                    data-wow-delay="0"
-                                >
-                                    <div className="logo  mb-30">
-                                        <Link href="/"><a className="mb-15">
-                                            <img
-                                                src="/assets/imgs/theme/logo.jpeg"
-                                                alt="logo"
-                                            />
-                                        </a>
-                                        </Link>
-                                        <p className="font-lg text-heading">
-                                           {/* Wholly  */}
-                                        </p>
-                                    </div>
-                                    <ul className="contact-infor">
-                                        <li>
-                                            <img
-                                                src="/assets/imgs/theme/icons/icon-location.svg"
-                                                alt=""
-                                            />
-                                            <strong>Address: </strong>{" "}
-                                            <span>
-                                            REPIH Technology Trading,<br  />
-                                           <span style={{marginLeft:85}}>New Delhi, Delhi, India</span> 
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <img
-                                                src="/assets/imgs/theme/icons/icon-contact.svg"
-                                                alt=""
-                                            />
-                                            <strong>Call Us:</strong>
-                                            <span>+91-8744991343</span>
-                                        </li>
-                                        <li>
-                                            <img
-                                                src="/assets/imgs/theme/icons/icon-email-2.svg"
-                                                alt=""
-                                            />
-                                            <strong>Email:</strong>
-                                            <span>sales@wholly.com</span>
-                                        </li>
-                                        <li>
-                                            <img
-                                                src="/assets/imgs/theme/icons/icon-clock.svg"
-                                                alt=""
-                                            />
-                                            <strong>Hours:</strong>
-                                            <span>
-                                                10:00 - 18:00, Mon - Sat
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div
-                                className="footer-link-widget col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".1s"
-                            >
-                                <h4 className="widget-title">Company</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    <li>
-                                        <a href="/page-about">About Us</a>
-                                    </li>
-                                    {/* <li>
-                                        <a href="#">Delivery Information</a>
-                                    </li> */}
-                                    <li>
-                                        <a href="/page-privacy-policy">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="/page-terms">Terms &amp; Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="/page-contact">Contact Us</a>
-                                    </li>
-                                    {/* <li>
-                                        <a href="#">Support Center</a>
-                                    </li> */}
-                                    {/* <li>
-                                        <a href="#">Careers</a>
-                                    </li> */}
-                                </ul>
-                            </div>
-                            <div
-                                className="footer-link-widget col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".2s"
-                            >
-                                <h4 className="widget-title ">Account</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    <li>
-                                        <a href="/page-login">Sign In</a>
-                                    </li>
-                                    <li>
-                                        <a href="/shop-cart">View Cart</a>
-                                    </li>
-                                    {/* <li>
-                                        <a href="#">My Wishlist</a>
-                                    </li> */}
-                                    {/* <li>
-                                        <a href="#">Track My Order</a>
-                                    </li> */}
-                                    {/* <li>
-                                        <a href="#">Help Ticket</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Shipping Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Compare products</a>
-                                    </li> */}
-                                </ul>
-                            </div>
-                            <div
-                                className="footer-link-widget widget-install-app col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".5s"
-                            >
-                                <h4 className="widget-title ">Install App</h4>
-                                <p className="">From App Store or Google Play</p>
-                                <div className="download-app ">
-                                    <a
-                                        href="#"
-                                        className="hover-up mb-sm-2 mb-lg-0"
-                                    >
-                                        <img
-                                            className="active"
-                                            src="/assets/imgs/theme/app-store.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                    <a href="#" className="hover-up mb-sm-2">
-                                        <img
-                                            src="/assets/imgs/theme/google-play.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <p className="mb-20 ">Secured Payment Gateways</p>
-                                <img
-                                    className=""
-                                    src="/assets/imgs/theme/payment-method.png"
-                                    alt=""
-                                />
-                            </div>
-                            {/* <div
-                                className="footer-link-widget col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".4s"
-                            >
-                                <h4 className="widget-title ">Popular</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    <li>
-                                        <a href="#">Milk & Flavoured Milk</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Butter and Margarine</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Eggs Substitutes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Marmalades</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sour Cream and Dips</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tea & Kombucha</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cheese</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div
-                                className="footer-link-widget widget-install-app col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".5s"
-                            >
-                                <h4 className="widget-title ">Install App</h4>
-                                <p className="">From App Store or Google Play</p>
-                                <div className="download-app ">
-                                    <a
-                                        href="#"
-                                        className="hover-up mb-sm-2 mb-lg-0"
-                                    >
-                                        <img
-                                            className="active"
-                                            src="/assets/imgs/theme/app-store.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                    <a href="#" className="hover-up mb-sm-2">
-                                        <img
-                                            src="/assets/imgs/theme/google-play.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <p className="mb-20 ">Secured Payment Gateways</p>
-                                <img
-                                    className=""
-                                    src="/assets/imgs/theme/payment-method.png"
-                                    alt=""
-                                />
-                            </div> */}
-                        </div>
-                    </div>
+                <div className="container">
+  <div className="row">
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/quick-links.svg"
+            alt="Quick Links"
+          />
+          Quick Links
+        </span>
+        <hr className="footer-border" />
+        <ul>
+          <li>
+            <a href="/page-about" title="About Us">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="/page-contact" title="Contact Us">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a
+              href="/page-privacy-policy"
+              title="Privacy Policy"
+            >
+             Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a
+              href="/page-terms"
+              title="/page-terms"
+            >
+             Terms &amp; Conditions
+            </a>
+          </li>
+          <li>
+            <a href="" title="Sitemap">
+              Sitemap
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Track Order">
+              Track Order
+            </a>
+          </li>
+          
+          <li>
+            <a
+              href="/shipping-policy"
+              title="Shipping Policy"
+            >
+              Shipping Policy
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Micro Influencer"
+            >
+              Micro Influencer
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/ubuy-important-links.svg"
+            alt="Ubuy"
+          />
+          Wholly
+        </span>
+        <hr className="footer-border" />
+        <ul>
+          <li>
+            <a
+              href="#"
+              title="Brands List"
+            >
+              Brands List
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Customer Reviews"
+            >
+              Customer Reviews
+            </a>
+          </li>
+          <li>
+            <a
+              href="/Returnpolicy"
+              title="Return Policy"
+            >
+              Return Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Careers">
+              Careers
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#" title="Blog">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="#" title="FAQ">
+              FAQ
+            </a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+    {/*colm-end*/}
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget footer-without-anchor payment-icons">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/payment-links.svg"
+            alt="Payment"
+          />
+          Payment
+        </span>
+        <hr className="footer-border" />
+        <ul>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="Paypal payment"
+              title="Paypal"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-158997744021.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            Paypal
+          </li>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="Visa payment"
+              title="Visa"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-159064539994.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            Visa
+          </li>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="Mastercard payment"
+              title="Mastercard"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-159049393275.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            Mastercard
+          </li>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="American Express payment"
+              title="American Express"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-159049550294.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            American Express
+          </li>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="RuPay payment"
+              title="RuPay"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-162021036610.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            RuPay
+          </li>
+          <li className="">
+            <img
+              width={45}
+              height={30}
+              alt="Net Banking payment"
+              title="Net Banking"
+              src="https://d2ati23fc66y9j.cloudfront.net/ubuycom/homebanner/payment_methods-161950834476.png"
+              defer="defer"
+              longdesc=""
+              style={{ margin: "0 0 0 -7px" }}
+            />{" "}
+            Net Banking
+          </li>{" "}
+        </ul>
+      </div>
+    </div>
+    {/*colm-end*/}
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget footer-area footer-without-anchor">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/shipping-links.svg"
+            alt="Shipping"
+          />
+          Shipping
+        </span>
+        <hr className="footer-border" />
+        <div className="media shipping-info">
+          <img
+            className="mr-3"
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/ufulfilled-icon.svg"
+            alt="ufulfilled"
+            height={20}
+            width={36}
+          />
+          <div className="media-body">
+            <ul>
+              <li>Express Shipping </li>
+              <li>Fast Delivery</li>
+            </ul>
+          </div>
+        </div>
+        <div className="media shipping-info">
+          <img
+            className="mr-3"
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/u-not-fulfilled-icon.svg"
+            alt="ufulfilled"
+            height={20}
+            width={36}
+          />
+          <div className="media-body">
+            <ul>
+              <li>Standard Shipping</li>
+              <li>10+ Business Days</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/*Country Selector*/}
+    </div>
+    {/*colm-end*/}
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/countries-covered-links.svg"
+            alt="India"
+          />
+          Cities Covered{" "}
+        </span>
+        <hr className="footer-border" />
+        <ul>
+          <li>
+            <a
+              href="#"
+              title="Mumbai"
+            >
+              Mumbai
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Delhi"
+            >
+              Delhi
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Bangalore"
+            >
+              Bangalore
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Hyderabad"
+            >
+              Hyderabad
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Ahmedabad"
+            >
+              Ahmedabad
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Chennai"
+            >
+              Chennai
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Kolkata"
+            >
+              Kolkata
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Surat"
+            >
+              Surat
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {/*colm-end*/}
+    <div className="col-md-4 col-sm-4 col-lg-2 col-6">
+      <div className="footer-widget footer-contant footer-without-anchor">
+        <span className="custom-h4 column-heading-icon">
+          <img
+            height={27}
+            width={27}
+            src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/support-links.svg"
+            alt="24/7 Support"
+          />
+          24/7 Support
+        </span>
+        <hr className="footer-border" />
+        <ul>
+          <li>
+            <div className="customer-support media p-3">
+              <img
+                className="m-0"
+                src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/new-home/images/footer/24-hours.png"
+                alt="24/7 support"
+                height={21}
+                width={21}
+              />
+              <div className="media-body pl-3">
+                <p className="large-font">
+                  <a
+                    className="font-weight-bold p-0"
+                    href="#"
+                  >
+                    24/7 Customer Support
+                  </a>
+                </p>
+                <p>
+                  <a
+                    className="mt-2 p-0"
+                    href="#"
+                  >
+                    Get your texts/emails answered in your native language
+                  </a>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>Customer Services</li>
+          <li>
+            <span className="dir-ltr">(+91) 8744991343</span>
+          </li>
+        </ul>
+        <div className="play-icons">
+          <span className="app-heading">Download our App</span>
+          <div className="play-images d-flex">
+            <a
+              rel="noopener"
+              href="https://apps.apple.com/app/ubuy-mobile/id613084551?utm_source=ubuy&utm_medium=website&utm_campaign=app_install&utm_term=footer_icon"
+              target="_blank"
+            >
+              <img
+                width={100}
+                height={29}
+                src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/app-store-icon.svg"
+                alt="App Store"
+              />
+            </a>
+            <a
+              rel="noopener"
+              href="https://play.google.com/store/apps/details?id=com.ubuy&referrer=utm_source=ubuy&utm_medium=website&utm_term=footer_icon&utm_campaign=app_install"
+              target="_blank"
+            >
+              <img
+                width={100}
+                height={29}
+                src="https://d3ulwu8fab47va.cloudfront.net/skin/frontend/default/ubuycom-v1/images/play-store-icon.svg"
+                alt="Play Store"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/*colm-end*/}
+  </div>
+  {/*colm-perent*/}
+
+</div>
+   
                 </section>
                 <div
                     className="container pb-30  wow animate__animated animate__fadeInUp"

@@ -53,7 +53,44 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-
+.title-detail {
+  font-size: 21px !important;
+}
+.item-number {
+  font-size: 14px !important;
+    margin-top: 10px;
+    color: #666;
+    line-height: 1;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif !important;
+}
+.total_review {
+  margin-left: 15px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.review-write {
+  margin-left:20px;
+}
+.desktop-related-none{
+  display: none;
+}
+.pen-review{
+  height: 16px;
+}
+.cat-link-here a {
+  color: #666 !important;
+  font-size: 16px;
+  font-weight: 600;
+  background: #fff;
+  display: inline-flex;
+  line-height: normal;
+  border-radius: 20px;
+  align-items: center;
+  height: 30px;
+}
 thead {
   font-weight: 600;
 }
@@ -5075,9 +5112,23 @@ table .product-thumbnail img {
 }
 
 .detail-info .product-price .current-price {
-  font-size: 58px;
-  text-decoration: none;
-  font-weight: 900;
+  color: #000 !important;
+  font-size: 20px;
+  font-weight: 600 !important;
+  line-height: 1;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  margin-bottom: 0px;
+
+}
+.older-price{
+  font-size: 15px;
+    margin-left: 15px;
+    color: #dc3545 !important;
+    line-height: 1;
+}
+.margin-left-buy{
+  margin-left: 30px;
 }
 
 .detail-info .product-price .old-price {
@@ -10598,6 +10649,12 @@ footer .hotline img {
 }
 
 @media only screen and (max-width: 768px) {
+  .desktop-related-none{
+display: block !important;
+  }
+  .mobile-related-none {
+    display: none;
+  }
   .totall-product h2 {
     font-size: 28px;
   }
@@ -10627,8 +10684,8 @@ footer .hotline img {
   }
   .logo.logo-width-1 {
     margin-right: 0;
-    position: absolute;
-    left: 50%;
+    position: relative;
+    left: 20%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -12014,10 +12071,24 @@ footer .hotline img {
   color: #fed700;
 }
 .add-cart {
-  background-color: #fed700;
+  background-color: #ffff;
   text-align: center;
   color: #130c7e;
   padding: 6px 0px;
+}
+.footer-mid a{
+color: #000 !important;
+}
+.footer-mid ul li a {
+  font-size: 12px;
+  padding-right: 25px;
+  color: #666666 !important;
+  font-weight: 600;
+    color: #666666;
+    
+}
+.footer-mid ul li {
+  padding-bottom: 13px;
 }
 .add-cart a {
   color: #000000;
