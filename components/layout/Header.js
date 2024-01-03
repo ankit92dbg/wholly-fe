@@ -57,6 +57,29 @@ useEffect(() => {
     router.push('/')
   }
 
+const getCurrentHour = new Date().getHours();
+let Hello;
+
+
+if(getCurrentHour >= 3 && getCurrentHour < 12){
+Hello = "Good Morning"
+}else
+if(getCurrentHour >= 13 && getCurrentHour < 16){
+  Hello = "Good Afternoon"
+  }
+  else
+if(getCurrentHour >= 17 && getCurrentHour < 19){
+  Hello = "Good Evening"
+  }
+  else
+if(getCurrentHour >= 20 && getCurrentHour < 24){
+  Hello = "Good Night"
+  }
+  else
+  if(getCurrentHour >= 1 && getCurrentHour < 3){
+    Hello = "Good Night"
+    }
+  
   return (
     <>
       <header className="header-area header-style-1 header-height-2">
@@ -197,7 +220,7 @@ useEffect(() => {
               <div className="logo logo-width-1">
                 <Link href="/">
                   <a>
-                    <img src="/assets/imgs/theme/logo.jpeg" alt="logo" />
+                    <img src="/assets/imgs/theme/logo.png" alt="logo" />
                   </a>
                 </Link>
               </div>
@@ -295,7 +318,7 @@ useEffect(() => {
                         </Link>
                         <Link href="/page-account">
                           <a>
-                            <span className="lable ml-0">Hello, {userDetails.name}</span>
+                            <span className="lable ml-0">{Hello}, {userDetails.name}</span>
                           </a>
                         </Link>
                         <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -384,7 +407,7 @@ useEffect(() => {
               <div className="logo logo-width-1 d-block d-lg-none">
                 <Link href="/">
                   <a>
-                    <img src="/assets/imgs/theme/logo.jpeg" alt="logo" />
+                    <img src="/assets/imgs/theme/logo.png" alt="logo" />
                   </a>
                 </Link>
               </div>

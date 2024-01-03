@@ -19,6 +19,8 @@ const Footer = () => {
     return (
         <>
             <footer className="main">
+           
+                  
                 <section className="newsletter mb-15  wow animate__animated animate__fadeIn">
                     <div className="container">
                         <div className="row">
@@ -164,6 +166,18 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                            </div>
+                            </section>
+                            
+                            <div className="featured section-padding">
+                              <div className="row padding-0">
+                            <img src="/assets/imgs/theme/footer-banner.png" alt="logo"  />
+                            </div>
+                            </div>
+                            <section className="featured  section-padding">
+                            <div className="container">
+                              <div className="row ">
                             <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
                                 <div
                                     className="banner-left-icon d-flex align-items-center  wow animate__animated animate__fadeInUp"
