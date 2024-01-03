@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link"
-import { imagePath } from "../../config/index";
+import { imagePath, server } from "../../config/index";
 
 const Banner5 = ({bannerData}) => {
+    console.log(bannerData)
     return (
         <>
             <div className="col-lg-4 col-md-6">
@@ -11,7 +12,9 @@ const Banner5 = ({bannerData}) => {
                     data-wow-delay="0"
                 >
                     {Object.keys(bannerData).length > 0 && (
+                        <a href={`${server}/${bannerData.otherBanner.banner_middle_one_link}`}>
                     <img src={`${imagePath}${bannerData.otherBanner.banner_middle_one}`} style={{width: '100%',height: '300px'}} alt="" />
+                    </a>
                     )}
                     <div className="banner-text">
                         {/* <h4>
@@ -32,7 +35,9 @@ const Banner5 = ({bannerData}) => {
                     data-wow-delay=".2s"
                 >
                     {Object.keys(bannerData).length > 0 && (
+                         <a href={`${server}/${bannerData.otherBanner.banner_middle_two_link}`}>
                     <img src={`${imagePath}${bannerData.otherBanner.banner_middle_two}`} style={{width: '100%',height: '300px'}} alt="" />
+                    </a>
                     )}
                     {/* <div className="banner-text">
                         <h4>
@@ -52,7 +57,9 @@ const Banner5 = ({bannerData}) => {
                     data-wow-delay=".4s"
                 >
                     {Object.keys(bannerData).length > 0 && (
+                        <a href={`${server}/${bannerData.otherBanner.banner_middle_three_link}`}>
                     <img src={`${imagePath}${bannerData.otherBanner.banner_middle_three}`} style={{width: '100%',height: '300px'}} alt="" />
+                    </a>
                     )}
                     {/* <div className="banner-text">
                         <h4>

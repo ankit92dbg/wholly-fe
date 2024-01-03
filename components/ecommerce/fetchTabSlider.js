@@ -66,6 +66,7 @@ function FeatchTabSlider({bannerData}) {
             <div className="row">
                 <div className="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
                 {Object.keys(bannerData).length > 0 && (
+                    <a href={`${server}/${bannerData.otherBanner.banner_bottom_left_link}`} className="banner-img-link">
                     <div className="banner-img" style={{    
                         borderRadius: '15px',
                         overflow: 'hidden',
@@ -74,16 +75,15 @@ function FeatchTabSlider({bannerData}) {
                         backgroundSize: 'cover',
                         width: '100%'
                         }}>
-                        {/* <div className="banner-text">
-                            <h2 className="mb-100">Bring nature into your home</h2>
+                       
+                           
 
-                            <Link href="/products">
-                                <a className="btn btn-xs">
-                                    Shop Now <i className="fi-rs-arrow-small-right"></i>
-                                </a>
-                            </Link>
-                        </div> */}
+                           
+                           
+                        
                     </div>
+                </a>
+                  
                 )}    
                 </div>
                 <div className="col-lg-9 col-md-12">
