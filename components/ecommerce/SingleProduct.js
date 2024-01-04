@@ -43,12 +43,20 @@ const SingleProduct = ({
     return (
         <>
             <div className="product-cart-wrap mb-30">
+            <div className="product-category">
+                        <Link href="/products">
+                         <a>{product.brand}</a>
+                        </Link>
+                    </div>
                 <div className="product-img-action-wrap">
+                    
                     <div className="product-img product-img-zoom">
+                        
                         <Link
                             href={`/details/${product.slug}`}
                         >
                             <a>
+                                
                                 <img
                                     className="default-img"
                                     src={handleFilterImage(product)}
@@ -103,22 +111,16 @@ const SingleProduct = ({
                             </span>
                         )} */}
                     </div>
-                </div>
-                <div className="product-content-wrap">
-                    <div className="product-category">
-                        <Link href="/products">
-                            <a>{product.brand}</a>
-                        </Link>
+                    <div className="product-badges product-badges-position-right product-badges-mrg">
+                         <span className="hot">Upto 95% Off</span>
+                       
                     </div>
-                    <h2>
-                        <Link
-                             href={`/details/${product.slug}`}
-                        >
-                            <a>{product.title}</a>
-                        </Link>
-                    </h2>
-
-                    <div className="product-rate-cover">
+                </div>
+                
+                <div className="product-content-wrap">
+                    <div className="row">
+                        <div className="col-10">
+                <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
                             <div
                                 className="product-rating"
@@ -130,27 +132,51 @@ const SingleProduct = ({
                             ({product.review.aggregateReview.total_review})
                         </span>
                     </div>
-
-                    <div>
-                        <span className="font-small text-muted">
-                            By <Link href="#"><a>{product.vendor.name}</a></Link>
-                        </span>
+                    <p>Minimum Order Quantity 10 </p>
+                    <h2>
+                        <Link
+                             href={`/details/${product.slug}`}
+                        >
+                            <a>{product.title}</a>
+                        </Link>
+                    </h2>
                     </div>
-
-                    <div className="product-card-bottom">
-                        <div className="product-price">
-                            <span>Rs. {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
-                            <span className="old-price">{product.oldPrice && `Rs. ${product.oldPrice}`}</span>
-                        </div>
-                        <div className="add-cart">
+                    <div className="col-2">
+                    <div className="add-cart">
                                 <a
                                     className="add"
                                     onClick={(e) => handleCart(product)}
                                 >
-                                    <i className="fi-rs-shopping-cart mr-5"></i> {(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock") ? "Add"  : (product.variants[0].stock_status=="on_back_order") ? "Add" : "Out of Stock" }
+                                    <i className="fi-rs-shopping-cart mr-5"></i> {(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock") ? ""  : (product.variants[0].stock_status=="on_back_order") ? "" : "" }
                                 </a>
                         </div>
                     </div>
+                    </div>
+
+                    <div>
+                        {/* <span className="font-small text-muted">
+                            By <Link href="#"><a>{product.vendor.name}</a></Link>
+                        </span> */}
+                    </div>
+
+                    <div className="product-card-bottom">
+                        <div className="product-price">
+                        <span className="old-price">{product.oldPrice && `&#8377 ${product.oldPrice}`}</span>
+                            <span>&#8377;{(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
+                           
+                        </div>
+                        <div className="row">
+                            <div className="col-6">
+                            <a aria-label="Add To Wishlist" class="action-btn hover-up"><i class="fi-rs-heart"></i></a>
+                            </div>
+                            <div className="col-6">
+                            <a aria-label="Compare" class="action-btn hover-up"><i class="fi-rs-shuffle"></i></a>
+                            </div>
+                        </div>
+                      
+                       
+                    </div>
+                    <p>Fullfiled By Wholly</p>
                 </div>
             </div>
         </>

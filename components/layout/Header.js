@@ -64,15 +64,15 @@ let Hello;
 if(getCurrentHour >= 3 && getCurrentHour < 12){
 Hello = "Good Morning"
 }else
-if(getCurrentHour >= 13 && getCurrentHour < 16){
+if(getCurrentHour >= 12 && getCurrentHour < 16){
   Hello = "Good Afternoon"
   }
   else
-if(getCurrentHour >= 17 && getCurrentHour < 19){
+if(getCurrentHour >= 16 && getCurrentHour < 19){
   Hello = "Good Evening"
   }
   else
-if(getCurrentHour >= 20 && getCurrentHour < 24){
+if(getCurrentHour >= 19 && getCurrentHour < 24){
   Hello = "Good Night"
   }
   else
@@ -92,53 +92,14 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
         <div className="header-top header-top-ptb-1 d-none d-lg-block">
           <div className="container">
             <div className="row align-items-center">
+              
               <div className="col-xl-4 col-lg-4">
-                <div className="header-info">
+                <div className="header-info header-info">
                   <ul>
-                    <li>
-                      <Link href="/page-about">
-                        <a>About Us</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/page-account">
-                        <a>My Account</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/shop-wishlist">
-                        <a>Wishlist</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/page-account">
-                        <a>Order Tracking</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4">
-                <div className="text-center">
-                  <div id="news-flash" className="d-inline-block">
-                    <ul>
-                      <li>
-                        Get great devices up to 50% off
-                        <Link href="/shop-grid-right">
-                          <a> View details</a>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4">
-                <div className="header-info header-info-right">
-                  <ul>
-                    <li>
+                    {/* <li>
                       Need help? Call Us:{" "}
                       <strong className="text-brand"> +91-8744991343</strong>
-                    </li>
+                    </li> */}
                     <li>
                       <Link href="/#">
                         <a className="language-dropdown-active">
@@ -207,6 +168,46 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
                           </a>
                         </li>
                       </ul> */}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-xl-4 col-lg-4">
+                <div className="text-center">
+                  <div id="news-flash" className="d-inline-block">
+                    <ul>
+                      <li>
+                        Get great devices up to 50% off
+                        <Link href="/shop-grid-right">
+                          <a> View details</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-4 col-lg-4">
+                <div className="header-info-right">
+                  <ul>
+                    <li>
+                      <Link href="/page-about">
+                        <a>About Us</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/page-account">
+                        <a>My Account</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/shop-wishlist">
+                        <a>Wishlist</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/page-account">
+                        <a>Order Tracking</a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -306,11 +307,11 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
                     </div>
                    
                     {Object.keys(userDetails).length > 0 ? (
-                      <div className="header-action-icon-2">
+                      <div className="header-action-icon-2 ">
                         <Link href="/page-account">
                           <a>
                             <img
-                              className="svgInject"
+                              className="svgInject user-images"
                               alt="Nest"
                               src="/assets/imgs/theme/icons/icon-user.svg"
                             />
@@ -318,7 +319,10 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
                         </Link>
                         <Link href="/page-account">
                           <a>
-                            <span className="lable ml-0">{Hello}, {userDetails.name}</span>
+                            <span className="lable ml-0 whishing">{Hello}</span>
+                            <div>
+                            <span className="username-header">{userDetails.name}</span>
+                            </div>
                           </a>
                         </Link>
                         <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -418,7 +422,7 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
                     onClick={handleToggle}
                   >
                     <span className="fi-rs-apps"></span>
-                    <span className="et">Browse</span> All Categories
+                    <span className="et">Explore</span> Categories
                     <i className="fi-rs-angle-down"></i>
                   </a>
 
@@ -624,13 +628,18 @@ if(getCurrentHour >= 20 && getCurrentHour < 24){
                 </div>
               </div>
               <div className="hotline d-none d-lg-flex">
+                <div>
+                  <a href="" className="btn btn-outline-primary">
+                    Become a vendor
+                  </a>
+                </div>
                 <img
                   src="/assets/imgs/theme/icons/icon-headphone.svg"
                   alt="hotline"
                 />
 
                 <p>
-                +91-8744991343<span>24/7 Support Center</span>
+                Return<span>& Order</span>
                 </p>
               </div>
 

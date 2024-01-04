@@ -47,9 +47,20 @@ const SingleProduct2 = ({
         <>
             <div className="product-cart-wrap mb-30">
                 <div className="product-img-action-wrap">
+                <div className="product-category">
+                        <Link href="/products">
+                            <a>{product.brand}</a>
+                        </Link>
+                    </div>
+                    <h2>
+                        <Link href={`/details/${product.slug}`}>
+                            <a>{product.title}</a>
+                        </Link>
+                    </h2>
                     <div className="product-img product-img-zoom">
                         <Link href={`/details/${product.slug}`}>
                             <a>
+                               
                                 <img
                                     className="default-img"
                                     src={handleFilterImage(product)}
@@ -107,16 +118,7 @@ const SingleProduct2 = ({
                     </div>
                 </div>
                 <div className="product-content-wrap">
-                    <div className="product-category">
-                        <Link href="/products">
-                            <a>{product.brand}</a>
-                        </Link>
-                    </div>
-                    <h2>
-                        <Link href={`/details/${product.slug}`}>
-                            <a>{product.title}</a>
-                        </Link>
-                    </h2>
+                   
 
                     <div className="product-rate d-inline-block">
                         <div
@@ -124,10 +126,11 @@ const SingleProduct2 = ({
                             style={{ width: `${product.review.aggregateReview.rating_percent}%` }}
                         ></div>
                     </div>
-
+                    <p>Minimum Order Quantity 10 </p>
                     <div className="product-price mt-10">
-                        <span>Rs. {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
-                        <span className="old-price">{product.oldPrice && `Rs. ${product.oldPrice}`}</span>
+                    <span className="old-price">{product.oldPrice && `<sub>&#8377;</sub> ${product.oldPrice}`}</span>
+                        <span><sup>&#8377;</sup> {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
+                       
                     </div>
                     <div className="sold mt-15 mb-15">
                         {/* <div className="progress mb-5">
@@ -138,7 +141,10 @@ const SingleProduct2 = ({
                             ></div>
                         </div> */}
                         {/* <span className="font-xs text-heading"> Sold: 90/120</span> */}
-                        <span className="font-xs text-heading">  By <Link href="#"><a>{product.vendor.name}</a></Link></span>
+                        <span className="font-xs text-heading">  Fullfiled By Wholly
+                        
+                         {/* <Link href="#"><a>{product.vendor.name}</a></Link> */}
+                         </span>
                     </div>
 
                     <a
@@ -147,6 +153,14 @@ const SingleProduct2 = ({
                     >
                         <i className="fi-rs-shopping-cart mr-5"></i>{(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock") ? "Add To Cart"  : (product.variants[0].stock_status=="on_back_order") ? "Add To Cart" : "Out of Stock" } 
                     </a>
+                </div>
+                <div className="row border-top">
+                    <div className="col-6 text-center mb-2 mt-2">
+                    <a aria-label="Add To Wishlist" class="action-btn hover-up"><i class="fi-rs-heart"></i><span> Wishlist</span></a>
+                    </div>
+                    <div className="col-6 text-center mb-2 mt-2">
+                    <a aria-label="Compare" class="action-btn hover-up"><i class="fi-rs-shuffle"></i> <span>Compare</span></a>
+                    </div>
                 </div>
             </div>
         </>

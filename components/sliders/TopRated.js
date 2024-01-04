@@ -42,15 +42,15 @@ const TopRatedSlider = () => {
                         <h6>
                             <Link  href={`/details/${product.slug}`}><a>{product.title}</a></Link>
                         </h6>
-                        <div className="product-rate-cover">
+                        {/* <div className="product-rate-cover">
                             <div className="product-rate d-inline-block">
                                 <div className="product-rating" style={{ width: `${product.review.aggregateReview.rating_percent}%` }}></div>
                             </div>
                             <span className="font-small ml-5 text-muted"> ({product.review.aggregateReview.total_review})</span>
-                        </div>
+                        </div> */}
                         <div className="product-price">
-                            <span>Rs. {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
-                            <span className="old-price">{product.oldPrice && `Rs. ${product.oldPrice}`}</span>
+                            <span><sup>&#8377;</sup> {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
+                            <span className="old-price">{product.oldPrice && `<sup>&#8377;</sup> ${product.oldPrice}`}</span>
                         </div>
                     </div>
                 </article>
