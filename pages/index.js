@@ -13,6 +13,7 @@ import Intro1 from "./../components/sliders/Intro1";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { server } from "../config/index";
+import { imagePath } from "../config/index";
 
 
 export default function Home() {
@@ -52,7 +53,7 @@ export default function Home() {
 
                 <section className="popular-categories section-padding">
                     <div className="container wow animate__fadeIn animate__animated">
-                        <div className="section-title">
+                        {/* <div className="section-title">
                             <div className="title">
                                 <h3>Featured Categories</h3>
                                 <ul className="list-inline nav nav-tabs links">
@@ -65,7 +66,7 @@ export default function Home() {
                                 ))}
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="carausel-10-columns-cover position-relative">
                             <div className="carausel-10-columns" id="carausel-10-columns">
                                 <CategorySlider catData={category} />
@@ -95,7 +96,30 @@ export default function Home() {
                         <FetchTabSlider bannerData={banner} />
                     </div>
                 </section>
-
+                <section className="newsletter mb-15  wow animate__animated animate__fadeIn">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                            {Object.keys(banner).length > 0 && (
+                                <a href={banner.otherBanner.banner_bottom_link} target="_blank">
+                                <div style={{
+                                    background: `url(${imagePath}${banner.otherBanner.banner_bottom}) no-repeat center bottom`,
+                                    backgroundSize: 'cover',
+                                    padding: '84px 78px',
+                                    clear: 'both',
+                                    display: 'table',
+                                    width: '100%',
+                                    borderRadius: '20px',
+                                    overflow: 'hidden',
+                                    minHeight: '400px'
+                                }}>
+                                </div>
+                                </a>
+                            )}    
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 {/* <section className="section-padding pb-5">
                     <div className="container">
                         <div className="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">

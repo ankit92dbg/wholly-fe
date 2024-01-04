@@ -21,6 +21,7 @@ const Intro1 = ({bannerData}) => {
             >
                 {Object.keys(bannerData).length > 0 && bannerData.topBanner.map((banner, i) => (
                     <SwiperSlide>
+                        <a href={banner.banner_link} target="_blank">
                         <div
                             className="single-hero-slider single-animation-wrap"
                             style={{
@@ -48,6 +49,7 @@ const Intro1 = ({bannerData}) => {
                                 </form>
                             </div> */}
                         </div>
+                        </a>
                     </SwiperSlide>
                 ))}
                 {/* <SwiperSlide>

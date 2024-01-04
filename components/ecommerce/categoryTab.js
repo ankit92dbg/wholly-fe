@@ -49,7 +49,10 @@ function CategoryTab() {
     return (
         <>
             <div className="section-title style-2 wow animate__animated animate__fadeIn">
-                <h3>Popular Products</h3>
+                <div>
+                    <p style={{color:'#241e85'}}>SEE ALL DEALS</p>
+                    <h3>TODAY'S DEAL</h3>
+                </div>
                 <ul className="nav nav-tabs links" id="myTab" role="tablist">
                     <li className="nav-item" role="presentation">
                         <button

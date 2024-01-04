@@ -13,6 +13,7 @@ import RelatedSlider from "../sliders/Related";
 import ThumbSlider from "../sliders/Thumb";
 import { useRouter } from "next/router";
 import { server } from "../../config";
+import Link from "next/link"
 
 
 const ProductDetails = ({
@@ -46,6 +47,10 @@ const ProductDetails = ({
     useEffect(() => {
         fetchProductByCategorySlug()
     }, [product,Router]);
+
+    useEffect(() => {
+        setQuantity(variantData.variant_minimum_order_qty)
+    }, [variantData]);
     
 
  
@@ -66,8 +71,6 @@ const ProductDetails = ({
         addToWishlist(product);
         toast("Added to Wishlist !");
     };
-    console.log('variantData--->',variantData)
-
     const inCart = cartItems.find((cartItem) => cartItem.id === product.id);
 
     return (
@@ -96,17 +99,26 @@ const ProductDetails = ({
                                             {Object.keys(productData).length>0 && productData.variants.length > 0 && (
                                                 <span className="stock-status out-stock"> Sale Off {variantData.discount}%</span>
                                             )}
-                                            <p className="cat-link-here"><a href="">Slug Here</a></p>
+                                            <p className="cat-link-here">
+                                            <div className="breadcrumb">
+                                                <Link href="/"><a>
+                                                    {'Home'}
+                                                </a>
+                                                </Link>
+                                                <span></span> {'Shop'}
+                                                <span></span> {productData.title}
+                                            </div>
+                                            </p>
                                             <h2 className="title-detail">{productData.title}</h2>
-                                            <p className="item-number">Item #: 15319336</p>
+                                            <p className="item-number">Item #: {variantData.variant_sku}</p>
                                             <div className="product-detail-rating">
                                                 <div className="product-rate-cover text-end">
                                                     <div className="product-rate d-inline-block">
                                                         <div className="product-rating" style={{ width: `${Object.keys(productData).length > 0 ? productData.review.aggregateReview.rating_percent : 0}%` }}></div>
                                                     </div>
-                                                    <span className="font-small ml-5 text-muted"> ({Object.keys(productData).length > 0 ? productData.review.aggregateReview.total_review : 0} review/s)</span><span className="total_review">4.3 rating
-</span>
-<a href=""><span className="review-write"> Write a review <img
+                                                    <span className="font-small ml-5 text-muted"> ({Object.keys(productData).length > 0 ? productData.review.aggregateReview.total_review : 0} review/s)</span><span className="total_review">{Object.keys(productData).length>0 && productData.review.aggregateReview.avg_rating} rating
+                                                    </span>
+                                            <a href=""><span className="review-write"> Write a review <img
                                             src="../../assets/imgs/theme/pen.png"
                                             alt=""
                                             className="pen-review"
@@ -116,7 +128,7 @@ const ProductDetails = ({
                                             <div className="clearfix product-price-cover">
                                                 <div className="product-price primary-color float-left">
                                                     <span className="current-price  text-brand">INR {(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.variant_sale_price : "" }</span>
-                                                    <span  className="current-price  text-brand older-price"><del>INR  16000</del></span>
+                                                    <span  className="current-price  text-brand older-price"><del>INR  {variantData.variant_regular_price}</del></span>
                                                     <span>
                                                         <span className="save-price font-md color3 ml-15">{(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.discount : "" }% Off</span>
                                                         <span className="old-price font-md ml-15">{productData.oldPrice ? `Rs. ${productData.oldPrice}` : null}</span>
@@ -188,12 +200,12 @@ const ProductDetails = ({
                                             <div className="detail-extralink">
                                                 {variantData.variant_total_stock > 0 && variantData.stock_status=="in_stock" && (
                                                     <div className="detail-qty border radius">
-                                                        <a onClick={(e) => (!inCart ? setQuantity(quantity > 1 ? quantity - 1 : 1) : decreaseQuantity(productData?.pr_id))} className="qty-down">
+                                                        <a onClick={(e) => (!inCart ? setQuantity(Number(quantity) > Number(variantData.variant_minimum_order_qty) ? Number(quantity) - 1 : Number(variantData.variant_minimum_order_qty)) : decreaseQuantity(productData?.pr_id))} className="qty-down">
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </a>
                                                         <span className="qty-val">{inCart?.quantity || quantity}</span>
                                                         <a 
-                                                         onClick={() => (!inCart && (quantity < variantData.variant_total_stock) ? setQuantity(quantity + 1) : increaseQuantity(productData.pr_id))} 
+                                                         onClick={() => (!inCart && (Number(quantity) < Number(variantData.variant_total_stock)) ? setQuantity(Number(quantity) + 1) : increaseQuantity(productData.pr_id))} 
                                                          className="qty-up">
                                                             <i className="fi-rs-angle-small-up"></i>
                                                         </a>
@@ -201,11 +213,11 @@ const ProductDetails = ({
                                                 )}
                                                  {variantData.stock_status=="on_back_order" && (
                                                     <div className="detail-qty border radius">
-                                                        <a onClick={(e) => (!inCart ? setQuantity(quantity > 1 ? quantity - 1 : 1) : decreaseQuantity(productData?.pr_id))} className="qty-down">
+                                                        <a onClick={(e) => (!inCart ? setQuantity(Number(quantity) > Number(variantData.variant_minimum_order_qty) ? Number(quantity) - 1 : Number(variantData.variant_minimum_order_qty)) : decreaseQuantity(productData?.pr_id))} className="qty-down">
                                                             <i className="fi-rs-angle-small-down"></i>
                                                         </a>
                                                         <span className="qty-val">{inCart?.quantity || quantity}</span>
-                                                        <a onClick={() => (!inCart ? setQuantity(quantity + 1) : increaseQuantity(productData.pr_id))} className="qty-up">
+                                                        <a onClick={() => (!inCart ? setQuantity(Number(quantity) + 1) : increaseQuantity(productData.pr_id))} className="qty-up">
                                                             <i className="fi-rs-angle-small-up"></i>
                                                         </a>
                                                     </div>

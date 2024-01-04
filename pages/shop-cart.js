@@ -248,7 +248,7 @@ const Cart = ({
                             <div className="detail-extralink mr-15">
                               <div className="detail-qty border radius ">
                                 <a
-                                  onClick={(e) => decreaseQuantity(item.pr_id)}
+                                  onClick={(e) => Number(item.quantity) > Number(item.selectedVariant.variant_minimum_order_qty) ?  decreaseQuantity(item.pr_id) : false}
                                   className="qty-down"
                                 >
                                   <i className="fi-rs-angle-small-down"></i>

@@ -42,8 +42,10 @@ function FeatchTabSlider({bannerData}) {
     return (
         <>
             <div className="section-title wow animate__animated animate__fadeIn">
-                <h3 className="">Daily Best Sells</h3>
-
+                <div>
+                    <p>LIMITED DEALS</p>
+                    <h3>TRENDING</h3>
+                </div>
                 <ul className="nav nav-tabs links" id="myTab-1" role="tablist">
                     <li className="nav-item" role="presentation">
                         <button className={active === "1" ? "nav-link active" : "nav-link"} onClick={featuredProduct}>
@@ -66,7 +68,7 @@ function FeatchTabSlider({bannerData}) {
             <div className="row">
                 <div className="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
                 {Object.keys(bannerData).length > 0 && (
-                    <a href={`${server}/${bannerData.otherBanner.banner_bottom_left_link}`} className="banner-img-link">
+                    <a target="_blank" href={`${bannerData.otherBanner.banner_bottom_left_link}`} className="banner-img-link">
                     <div className="banner-img" style={{    
                         borderRadius: '15px',
                         overflow: 'hidden',

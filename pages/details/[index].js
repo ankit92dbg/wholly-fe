@@ -7,7 +7,7 @@ import { server } from "../../config/index";
 const ProductDetailsComponent = ({ product }) => {
     return (
         <>
-        <Layout title={product?.title} parent="Home" sub="Shop" subChild={product?.title}>
+        <Layout title={product?.title} description={product?.description} parent="Home" sub="Shop" subChild={product?.title}>
             <div className="container">
                 <ProductDetails product={product} />
             </div>

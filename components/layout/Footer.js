@@ -20,54 +20,12 @@ const Footer = () => {
         <>
             <footer className="main">
            
-                  
-                <section className="newsletter mb-15  wow animate__animated animate__fadeIn">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                            {Object.keys(banner).length > 0 && (
-                                <div style={{
-                                    background: `url(${imagePath}${banner.otherBanner.banner_bottom}) no-repeat center bottom`,
-                                    backgroundSize: 'cover',
-                                    padding: '84px 78px',
-                                    clear: 'both',
-                                    display: 'table',
-                                    width: '100%',
-                                    borderRadius: '20px',
-                                    overflow: 'hidden',
-                                    minHeight: '400px'
-                                }}>
-                                    {/* <div className="newsletter-content">
-                                        <h2 className="mb-20">
-                                            Stay home & get your daily <br />
-                                            needs from our shop
-                                        </h2>
-                                        <p className="mb-45">
-                                            Start You'r Daily Shopping with{" "}
-                                            <span className="text-brand">
-                                                Nest Mart
-                                            </span>
-                                        </p>
-                                        <form className="form-subcriber d-flex">
-                                            <input
-                                                type="email"
-                                                placeholder="Your emaill address"
-                                            />
-                                            <button className="btn" type="submit">
-                                                Subscribe
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <img
-                                        src="/assets/imgs/banner/banner-9.png"
-                                        alt="newsletter"
-                                    /> */}
-                                </div>
-                            )}    
+            <div className="featured section-padding">
+                              <div className="row padding-0">
+                                <img src="/assets/imgs/theme/footer-banner.png" alt="logo"  />
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                
                 <section className="featured  section-padding">
                     <div className="container">
                         <div className="row">
@@ -170,11 +128,7 @@ const Footer = () => {
                             </div>
                             </section>
                             
-                            <div className="featured section-padding">
-                              <div className="row padding-0">
-                            <img src="/assets/imgs/theme/footer-banner.png" alt="logo"  />
-                            </div>
-                            </div>
+                            
                             <section className="featured  section-padding">
                             <div className="container">
                               <div className="row ">

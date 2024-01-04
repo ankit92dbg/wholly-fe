@@ -19,11 +19,13 @@ const SingleProduct = ({
         if(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock"){
             product.selectedVariant = product.variants[0]
             product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
             addToCart(product);
             toast("Product added to Cart !");
         }else if(product.variants[0].stock_status=="on_back_order"){
             product.selectedVariant = product.variants[0]
             product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
             addToCart(product);
             toast("Product added to Cart !");
         }else{
@@ -112,7 +114,7 @@ const SingleProduct = ({
                         )} */}
                     </div>
                     <div className="product-badges product-badges-position-right product-badges-mrg">
-                         <span className="hot">Upto 95% Off</span>
+                         <span className="hot">Upto {product.variants[0].discount}% Off</span>
                        
                     </div>
                 </div>
@@ -132,7 +134,7 @@ const SingleProduct = ({
                             ({product.review.aggregateReview.total_review})
                         </span>
                     </div>
-                    <p>Minimum Order Quantity 10 </p>
+                    <p>Minimum Order Quantity {product.variants[0].variant_minimum_order_qty} </p>
                     <h2>
                         <Link
                              href={`/details/${product.slug}`}
@@ -147,7 +149,7 @@ const SingleProduct = ({
                                     className="add"
                                     onClick={(e) => handleCart(product)}
                                 >
-                                    <i className="fi-rs-shopping-cart mr-5"></i> {(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock") ? ""  : (product.variants[0].stock_status=="on_back_order") ? "" : "" }
+                                    <i className="fi-rs-shopping-cart mr-5"></i> {(product.variants[0].variant_total_stock > product.variants[0].variant_minimum_order_qty && product.variants[0].stock_status=="in_stock") ? ""  : (product.variants[0].stock_status=="on_back_order") ? "" : "" }
                                 </a>
                         </div>
                     </div>
@@ -161,7 +163,7 @@ const SingleProduct = ({
 
                     <div className="product-card-bottom">
                         <div className="product-price">
-                        <span className="old-price">{product.oldPrice && `&#8377 ${product.oldPrice}`}</span>
+                        <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span>
                             <span>&#8377;{(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
                            
                         </div>

@@ -22,11 +22,13 @@ const SingleProduct2 = ({
         if(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock"){
             product.selectedVariant = product.variants[0]
             product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
             addToCart(product);
             toast("Product added to Cart !");
         }else if(product.variants[0].stock_status=="on_back_order"){
             product.selectedVariant = product.variants[0]
             product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
             addToCart(product);
             toast("Product added to Cart !");
         }else{
@@ -126,9 +128,9 @@ const SingleProduct2 = ({
                             style={{ width: `${product.review.aggregateReview.rating_percent}%` }}
                         ></div>
                     </div>
-                    <p>Minimum Order Quantity 10 </p>
+                    <p>Minimum Order Quantity {product.variants[0].variant_minimum_order_qty} </p>
                     <div className="product-price mt-10">
-                    <span className="old-price">{product.oldPrice && `<sub>&#8377;</sub> ${product.oldPrice}`}</span>
+                    <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span>
                         <span><sup>&#8377;</sup> {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
                        
                     </div>
@@ -151,7 +153,7 @@ const SingleProduct2 = ({
                         className="btn w-100 hover-up"
                         onClick={(e) => handleCart(product)}
                     >
-                        <i className="fi-rs-shopping-cart mr-5"></i>{(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock") ? "Add To Cart"  : (product.variants[0].stock_status=="on_back_order") ? "Add To Cart" : "Out of Stock" } 
+                        <i className="fi-rs-shopping-cart mr-5"></i>{(product.variants[0].variant_total_stock > product.variants[0].variant_minimum_order_qty && product.variants[0].stock_status=="in_stock") ? "Add To Cart"  : (product.variants[0].stock_status=="on_back_order") ? "Add To Cart" : "Out of Stock" } 
                     </a>
                 </div>
                 <div className="row border-top">
