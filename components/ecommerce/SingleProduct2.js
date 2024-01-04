@@ -19,7 +19,8 @@ const SingleProduct2 = ({
     
 
     const handleCart = (product) => {
-        if(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock"){
+        console.log('ok--->',Number(product.variants[0].variant_total_stock) >= Number(product.variants[0].variant_minimum_order_qty),product.variants[0].stock_status)
+        if(Number(product.variants[0].variant_total_stock) >= Number(product.variants[0].variant_minimum_order_qty) && product.variants[0].stock_status=="in_stock"){
             product.selectedVariant = product.variants[0]
             product.description = ""
             product.quantity = Number(product.variants[0].variant_minimum_order_qty)
@@ -153,7 +154,7 @@ const SingleProduct2 = ({
                         className="btn w-100 hover-up"
                         onClick={(e) => handleCart(product)}
                     >
-                        <i className="fi-rs-shopping-cart mr-5"></i>{(product.variants[0].variant_total_stock > product.variants[0].variant_minimum_order_qty && product.variants[0].stock_status=="in_stock") ? "Add To Cart"  : (product.variants[0].stock_status=="on_back_order") ? "Add To Cart" : "Out of Stock" } 
+                        <i className="fi-rs-shopping-cart mr-5"></i>{(Number(product.variants[0].variant_total_stock) >= Number(product.variants[0].variant_minimum_order_qty) && product.variants[0].stock_status=="in_stock") ? "Add To Cart"  : (product.variants[0].stock_status=="on_back_order") ? "Add To Cart" : "Out of Stock" } 
                     </a>
                 </div>
                 <div className="row border-top">

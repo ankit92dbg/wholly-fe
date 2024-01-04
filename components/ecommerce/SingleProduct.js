@@ -16,7 +16,7 @@ const SingleProduct = ({
     openQuickView,
 }) => {
     const handleCart = (product) => {
-        if(product.variants[0].variant_total_stock > 0 && product.variants[0].stock_status=="in_stock"){
+        if(Number(product.variants[0].variant_total_stock) >= Number(product.variants[0].variant_minimum_order_qty) && product.variants[0].stock_status=="in_stock"){
             product.selectedVariant = product.variants[0]
             product.description = ""
             product.quantity = Number(product.variants[0].variant_minimum_order_qty)

@@ -17,10 +17,25 @@ const WishlistModal = ({
 }) => {
   
     const handleCart = (product) => {
-        product.selectedVariant = product.variants[0]
-        product.description = ""
-        addToCart(product);
-        toast("Product added to Cart !");
+        // product.selectedVariant = product.variants[0]
+        // product.description = ""
+        // addToCart(product);
+        // toast("Product added to Cart !");
+        if(Number(product.variants[0].variant_total_stock) >= Number(product.variants[0].variant_minimum_order_qty) && product.variants[0].stock_status=="in_stock"){
+            product.selectedVariant = product.variants[0]
+            product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
+            addToCart(product);
+            toast("Product added to Cart !");
+        }else if(product.variants[0].stock_status=="on_back_order"){
+            product.selectedVariant = product.variants[0]
+            product.description = ""
+            product.quantity = Number(product.variants[0].variant_minimum_order_qty)
+            addToCart(product);
+            toast("Product added to Cart !");
+        }else{
+            toast("Product is out of stock !");
+        }
     };
 
     return (
