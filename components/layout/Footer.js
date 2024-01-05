@@ -22,7 +22,11 @@ const Footer = () => {
            
             <div className="featured section-padding">
                               <div className="row padding-0">
-                                <img src="/assets/imgs/theme/footer-banner.png" alt="logo"  />
+                              {Object.keys(banner).length > 0 && (
+                                <a target="_blank" href={`${banner.otherBanner.banner_bottom_link_2}`}>
+                                  <img src={`${imagePath}${banner.otherBanner.banner_bottom_2}`} style={{width: '100%',height: '300px'}} alt="" />
+                                </a>
+                              )}
                               </div>
                             </div>
                 
