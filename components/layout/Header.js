@@ -93,7 +93,7 @@ if(getCurrentHour >= 19 && getCurrentHour < 24){
           <div className="container">
             <div className="row align-items-center">
               
-              <div className="col-xl-4 col-lg-4">
+              <div className="col-xl-3 col-lg-3">
                 <div className="header-info header-info">
                   <ul>
                     {/* <li>
@@ -172,12 +172,12 @@ if(getCurrentHour >= 19 && getCurrentHour < 24){
                   </ul>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-4">
+              <div className="col-xl-5 col-lg-5">
                 <div className="text-center">
                   <div id="news-flash" className="d-inline-block">
                     <ul>
                       <li>
-                        Get great devices up to 50% off
+                        Online Wholesale Marketplace | Start Selling with Wholly today
                         <Link href="/shop-grid-right">
                           <a> View details</a>
                         </Link>

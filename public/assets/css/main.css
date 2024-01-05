@@ -96,12 +96,12 @@ time, mark, audio, video {
   color: #000;
 }
 .swiper-slide .product-cart-wrap .product-content-wrap .product-price span {
-  font-size: 30px !important;
+  font-size: 30px ;
   font-weight: bold;
   color: #000;
 }
 .swiper-slide .product-cart-wrap .product-content-wrap .product-price span sup {
-  font-size: 15px !important;
+  font-size: 15px;
   font-weight: bold;
   color: #000;
 }
@@ -1025,6 +1025,13 @@ h5.widget-title {
 
 .text-style-1 {
   position: relative;
+}
+.old-price-old {
+  margin-left: -9px;
+  margin-top: -28px;
+}
+.product-price span .regular-price-pk{
+  font-size: 28px !important;
 }
 
 .text-style-1::after {
@@ -12187,7 +12194,7 @@ display: block !important;
   }
 }
 .product-cart-wrap .product-content-wrap .product-price span {
-  font-size: 15px !important;
+  font-size: 15px ;
   font-weight: bold;
   color: #565b83;
 }
@@ -12219,4 +12226,7 @@ color: #000 !important;
   margin-top: 20px;
   background-color: #000;
   padding: 5px 0px;
+}
+.old-price-pk span {
+  font-size: 16px !important;
 }

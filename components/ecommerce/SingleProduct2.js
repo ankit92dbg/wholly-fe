@@ -131,7 +131,8 @@ const SingleProduct2 = ({
                     </div>
                     <p>Minimum Order Quantity {product.variants[0].variant_minimum_order_qty} </p>
                     <div className="product-price mt-10">
-                    <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span>
+                        <div className="old-price-pk">
+                    <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span></div>
                         <span><sup>&#8377;</sup> {(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
                        
                     </div>

@@ -163,8 +163,9 @@ const SingleProduct = ({
 
                     <div className="product-card-bottom">
                         <div className="product-price">
-                        <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span>
-                            <span>&#8377;{(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span>
+                            <div className="old-price-old">
+                        <span className="old-price">&#8377;{product.variants.length > 0 && `${product.variants[0].variant_regular_price}`}</span></div>
+                            <span ><sup>&#8377;</sup><span className="regular-price-pk">{(product.variants.length > 0) ? product.variants[0].variant_sale_price : "" } </span></span>
                            
                         </div>
                         <div className="row">
