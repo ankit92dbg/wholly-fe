@@ -160,10 +160,14 @@ const SingleProduct2 = ({
                 </div>
                 <div className="row border-top">
                     <div className="col-6 text-center mb-2 mt-2">
-                    <a aria-label="Add To Wishlist" class="action-btn hover-up"><i class="fi-rs-heart"></i><span> Wishlist</span></a>
+                    <a aria-label="Add To Wishlist" 
+                    onClick={(e) => handleWishlist(product)}
+                    class="action-btn hover-up"><i class="fi-rs-heart"></i><span> Wishlist</span></a>
                     </div>
                     <div className="col-6 text-center mb-2 mt-2">
-                    <a aria-label="Compare" class="action-btn hover-up"><i class="fi-rs-shuffle"></i> <span>Compare</span></a>
+                    <a aria-label="Compare" class="action-btn hover-up"
+                     onClick={(e) => handleCompare(product)}
+                    ><i class="fi-rs-shuffle"></i> <span>Compare</span></a>
                     </div>
                 </div>
             </div>
