@@ -1,8 +1,8 @@
 const dev = process.env.NODE_ENV !== "production";
 
-export const server = "http://nextbackend.vrcwebsolutions.com"
+export const server = "https://nextbackend.vrcwebsolutions.com"
 
-export const imagePath = "http://nextbackend.vrcwebsolutions.com/common/"
+export const imagePath = "https://nextbackend.vrcwebsolutions.com/common/"
 
 export const handleFilterImage = (product) => {
     const image = product.img.filter(img => {
