@@ -54,7 +54,6 @@ const CompareTable = ({ data, features, deleteFromCompare, addToCart }) => {
                             ) : feature == "rating" ? (
                                 <td>
                                     <div className="rating_wrap">
-                                        {product.review >= 0 && (
                                             <>
                                                 <div className="product-rate d-inline-block">
                                                     <div
@@ -69,7 +68,6 @@ const CompareTable = ({ data, features, deleteFromCompare, addToCart }) => {
                                                     ({product.review})
                                                 </span>
                                             </>
-                                        )}
                                     </div>
                                 </td>
                             ) : feature == "description" ? (
