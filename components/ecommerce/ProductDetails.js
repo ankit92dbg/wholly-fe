@@ -127,8 +127,8 @@ const ProductDetails = ({
                                             </div>
                                             <div className="clearfix product-price-cover">
                                                 <div className="product-price primary-color float-left">
-                                                    <span className="current-price  text-brand">INR {(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.variant_sale_price : "" }</span>
-                                                    <span  className="current-price  text-brand older-price"><del>INR  {variantData.variant_regular_price}</del></span>
+                                                    <span className="current-price  text-brand">Rs. {(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.variant_sale_price : "" }</span>
+                                                    <span  className="current-price  text-brand older-price"><del>Rs.  {variantData.variant_regular_price}</del></span>
                                                     <span>
                                                         <span className="save-price font-md color3 ml-15">{(Object.keys(productData).length>0 && productData.variants.length > 0) ? variantData.discount : "" }% Off</span>
                                                         <span className="old-price font-md ml-15">{productData.oldPrice ? `Rs. ${productData.oldPrice}` : null}</span>
