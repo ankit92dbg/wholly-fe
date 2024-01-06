@@ -48,6 +48,8 @@ const ProductDetails = ({
         fetchProductByCategorySlug()
     }, [product,Router]);
 
+    console.log('variantData.variant_minimum_order_qty--->',variantData.variant_minimum_order_qty)
+    console.log('inCart?.quantity--->',inCart?.quantity)
     useEffect(() => {
         setQuantity(variantData.variant_minimum_order_qty)
     }, [variantData]);
@@ -71,7 +73,7 @@ const ProductDetails = ({
         addToWishlist(product);
         toast("Added to Wishlist !");
     };
-    const inCart = cartItems.find((cartItem) => cartItem.id === product.id);
+    const inCart = cartItems.find((cartItem) => cartItem.id === product.pr_id);
 
     return (
         <>

@@ -91,7 +91,7 @@ const WishlistModal = ({
                                         >
                                             <span
                                                 onClick={(e) =>
-                                                    deleteFromWishlist(product.id)
+                                                    deleteFromWishlist(product.pr_id)
                                                 }
                                             >
                                                 <button>Delete</button>
