@@ -88,7 +88,7 @@ const Wishlist = ({
                                                                         <div
                                                                             className="product-rating"
                                                                             style={{
-                                                                                width: "90%",
+                                                                                width: `${product.review.aggregateReview.rating_percent}%`,
                                                                             }}
                                                                         ></div>
                                                                     </div>

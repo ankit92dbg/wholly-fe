@@ -60,7 +60,7 @@ const CompareTable = ({ data, features, deleteFromCompare, addToCart }) => {
                                                     <div
                                                         className="product-rating"
                                                         style={{
-                                                            width: `${product.ratingScore}%`,
+                                                            width: `${product.review.aggregateReview.rating_percent}%`,
                                                         }}
                                                     ></div>
                                                 </div>
