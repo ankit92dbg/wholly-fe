@@ -103,7 +103,7 @@ const Wishlist = ({
                                                                 data-title="Price"
                                                             >
                                                                 <h3 className="text-brand">
-                                                                    $
+                                                                    Rs. 
                                                                     {
                                                                         (product.variants.length > 0) ? product.variants[0].variant_sale_price : "" 
                                                                     }
