@@ -7,6 +7,8 @@ import {
     closeWishlistModal,
     deleteFromWishlist
 } from "../redux/action/wishlistAction";
+import Link from "next/link";
+
 
 const Wishlist = ({
     wishlist,
@@ -77,11 +79,11 @@ const Wishlist = ({
 
                                                             <td className="product-des product-name">
                                                                 <h6 className="product-name  mb-10">
-                                                                    <a>
+                                                                <Link href={`/details/${product.slug}`}>
                                                                         {
                                                                             product.title
                                                                         }
-                                                                    </a>
+                                                                    </Link>
                                                                 </h6>
                                                                 <div className="product-rate-cover">
                                                                     <div className="product-rate d-inline-block">
