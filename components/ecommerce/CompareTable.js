@@ -74,15 +74,21 @@ const CompareTable = ({ data, features, deleteFromCompare, addToCart }) => {
                                 </td>
                             ) : feature == "description" ? (
                                 <td className="row_text font-xs">
-                                    <p>{product.description}</p>
+                                   <div dangerouslySetInnerHTML={{
+                                                        __html: product.description
+                                                      }}></div>
                                 </td>                
                             ) : feature == "description" ? (
                                 <td className="row_text font-xs">
-                                    <p>{product.description}</p>
+                                   <div dangerouslySetInnerHTML={{
+                                                        __html: product.description
+                                                      }}></div>
                                 </td>                
                             ) : feature == "color" ? (
                                 <td className="row_text font-xs">
-                                    <p>{product.description}</p>
+                                   <div dangerouslySetInnerHTML={{
+                                                        __html: product.description
+                                                      }}></div>
                                 </td>                
                             ) : feature == "stock" ? (
                                 <td className="row_stock">
