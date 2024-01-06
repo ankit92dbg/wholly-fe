@@ -219,7 +219,7 @@ const Cart = ({
 
                           <td className="product-des product-name">
                             <h6 className="product-name">
-                              <Link href={`/details/${item.pr_id}`}>
+                              <Link href={`/details/${item.slug}`}>
                                 <a>{item.title}</a>
                               </Link>
                             </h6>
