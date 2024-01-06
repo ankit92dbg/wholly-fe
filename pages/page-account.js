@@ -274,7 +274,7 @@ function Account() {
                                                                             <p><strong>Order Date :</strong> {item.created_at}</p>
                                                                         </div>
                                                                         <div className="col-md-4">
-                                                                            <p><strong>Order Total :</strong> INR {item.total}</p>
+                                                                            <p><strong>Order Total :</strong> Rs. {item.total}</p>
                                                                             <p><strong>Order Status :</strong> {item.order_status}</p>
                                                                         </div>
                                                                     </div>    
@@ -294,7 +294,7 @@ function Account() {
                                                                                 }}></span></p>
                                                                             </div>
                                                                             <div className="col-md-2">
-                                                                                <p>INR {item2.selectedVariant.variant_sale_price}</p>
+                                                                                <p>Rs. {item2.selectedVariant.variant_sale_price}</p>
                                                                             </div>
                                                                         </div>
                                                                     ))}

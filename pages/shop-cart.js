@@ -660,7 +660,7 @@ const Cart = ({
                               </td>
                               <td className="cart_total_amount">
                                 <span className="font-lg fw-900 text-brand">
-                                  INR {price()}
+                                  Rs. {price()}
                                 </span>
                               </td>
                             </tr>
@@ -668,7 +668,7 @@ const Cart = ({
                               <td className="cart_total_label">Shipping</td>
                               <td className="cart_total_amount">
                                 <i className="ti-gift mr-5"></i>
-                                INR {totalShippingAmount*shippingCharge}
+                                Rs. {totalShippingAmount*shippingCharge}
                               </td>
                             </tr>
                             <tr>
@@ -676,7 +676,7 @@ const Cart = ({
                               <td className="cart_total_amount">
                                 <strong>
                                   <span className="font-xl fw-900 text-brand">
-                                    INR {price()+(totalShippingAmount*shippingCharge)}
+                                    Rs. {price()+(totalShippingAmount*shippingCharge)}
                                   </span>
                                 </strong>
                               </td>
